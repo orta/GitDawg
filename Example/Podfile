@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'GitDawg_Example' do
+  pod 'GitDawg', :path => '../'
+
+  target 'GitDawg_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
