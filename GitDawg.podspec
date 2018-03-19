@@ -1,42 +1,44 @@
-#
-# Be sure to run `pod lib lint GitDawg.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
+require 'json'
+
+pkg_version = lambda do |dir_from_root = '', version = 'version'|
+  path = File.join(__dir__, dir_from_root, 'package.json')
+  JSON.parse(File.read(path))[version]
+end
+
+gitdawg_version = pkg_version.call
+react_native_version = pkg_version.call('node_modules/react-native')
 
 Pod::Spec.new do |s|
   s.name             = 'GitDawg'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of GitDawg.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
+  s.version          = gitdawg_version
+  s.summary          = 'Components for GitHawk.'
   s.homepage         = 'https://github.com/orta/GitDawg'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.license          = { type: 'MIT', file: 'LICENSE' }
   s.author           = { 'orta' => 'orta.therox@gmail.com' }
-  s.source           = { :git => 'https://github.com/orta/GitDawg.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { git: 'https://github.com/orta/GitDawg.git', tag: s.version.to_s }
 
-  s.ios.deployment_target = '8.0'
+  s.source_files   = 'Pod/Classes/**/*.{h,m}'
+  s.resources      = 'Pod/Assets/{GitDawg.js,assets}'
 
-  s.source_files = 'GitDawg/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'GitDawg' => ['GitDawg/Assets/*.png']
-  # }
+  # React
+  s.dependency 'React/Core', react_native_version
+  s.dependency 'React/CxxBridge', react_native_version
+  s.dependency 'React/RCTAnimation', react_native_version
+  s.dependency 'React/RCTCameraRoll', react_native_version
+  s.dependency 'React/RCTImage', react_native_version
+  s.dependency 'React/RCTLinkingIOS', react_native_version
+  s.dependency 'React/RCTNetwork', react_native_version
+  s.dependency 'React/RCTText', react_native_version
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  # React's dependencies
+  s.dependency 'yoga', "#{react_native_version}.React"
+  podspecs = [
+    'node_modules/react-native/third-party-podspecs/DoubleConversion.podspec',
+    'node_modules/react-native/third-party-podspecs/Folly.podspec',
+    'node_modules/react-native/third-party-podspecs/glog.podspec'
+  ]
+  podspecs.each do |podspec_path|
+    podspec_json = JSON.parse(`pod ipc spec #{podspec_path}`)
+    s.dependency podspec_json['name'], podspec_json['version']
+  end
 end

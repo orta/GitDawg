@@ -1,11 +1,25 @@
+inhibit_all_warnings!
+
 use_frameworks!
 
+platform :ios, '9.0'
+
+node_modules_path = '../node_modules'
+react_path = File.join(node_modules_path, 'react-native')
+yoga_path = File.join(react_path, 'ReactCommon/yoga')
+folly_spec_path = File.join(react_path, 'third-party-podspecs/Folly.podspec')
+glog_spec_path = File.join(react_path, 'third-party-podspecs/glog.podspec')
+double_conversion_spec_path = File.join(react_path, 'third-party-podspecs/DoubleConversion.podspec')
+
 target 'GitDawg_Example' do
-  pod 'GitDawg', :path => '../'
+  pod 'GitDawg', path: '../'
 
-  target 'GitDawg_Tests' do
-    inherit! :search_paths
+  # We want extra developer support in React inside this app
+  pod 'React', path: react_path, subspecs: ['DevSupport']
 
-    
-  end
+  # We're letting CP know where it can find these Podspecs
+  pod 'yoga', path: yoga_path
+  pod 'Folly', podspec: folly_spec_path
+  pod 'DoubleConversion', podspec: double_conversion_spec_path
+  pod 'glog', podspec: glog_spec_path
 end
