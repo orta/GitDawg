@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+
+gem 'cocoapods'
+# gem 'cocoapods-fix-react-native', path: "../../../../../react-native/cocoapods-fix-react-native"
+gem 'cocoapods-fix-react-native'
+gem 'pry'

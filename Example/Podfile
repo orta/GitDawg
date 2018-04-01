@@ -1,7 +1,6 @@
 inhibit_all_warnings!
 
-use_frameworks!
-
+# use_frameworks!
 platform :ios, '9.0'
 
 node_modules_path = '../node_modules'
@@ -10,6 +9,8 @@ yoga_path = File.join(react_path, 'ReactCommon/yoga')
 folly_spec_path = File.join(react_path, 'third-party-podspecs/Folly.podspec')
 glog_spec_path = File.join(react_path, 'third-party-podspecs/glog.podspec')
 double_conversion_spec_path = File.join(react_path, 'third-party-podspecs/DoubleConversion.podspec')
+
+plugin 'cocoapods-fix-react-native'
 
 target 'GitDawg_Example' do
   pod 'GitDawg', path: '../'

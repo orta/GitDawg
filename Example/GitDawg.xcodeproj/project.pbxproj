@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		54760623A8F055785A7D04A4 /* Pods_GitDawg_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8025BB2DDCE20D4ADA8F0ABF /* Pods_GitDawg_Example.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -23,6 +22,7 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		CEB0A599983300AFD7F262DC /* libPods-GitDawg_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09332CB4CD529E031ADA0B8C /* libPods-GitDawg_Example.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		04F2A1AEF6481DAF486B7075 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		09332CB4CD529E031ADA0B8C /* libPods-GitDawg_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GitDawg_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11340B5BAF48B6CD8B5EC495 /* Pods-GitDawg_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitDawg_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitDawg_Example/Pods-GitDawg_Example.release.xcconfig"; sourceTree = "<group>"; };
 		2799F45939E4A6DDA22D23D6 /* GitDawg.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = GitDawg.podspec; path = ../GitDawg.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		2B7BE3561338BF95815DB4CA /* Pods_GitDawg_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitDawg_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,7 +63,6 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8025BB2DDCE20D4ADA8F0ABF /* Pods_GitDawg_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitDawg_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,7 +74,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				54760623A8F055785A7D04A4 /* Pods_GitDawg_Example.framework in Frameworks */,
+				CEB0A599983300AFD7F262DC /* libPods-GitDawg_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,7 +120,7 @@
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
 				2B7BE3561338BF95815DB4CA /* Pods_GitDawg_Tests.framework */,
-				8025BB2DDCE20D4ADA8F0ABF /* Pods_GitDawg_Example.framework */,
+				09332CB4CD529E031ADA0B8C /* libPods-GitDawg_Example.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
