@@ -17,6 +17,8 @@ Pod::Spec.new do |s|
   s.author           = { 'orta' => 'orta.therox@gmail.com' }
   s.source           = { git: 'https://github.com/orta/GitDawg.git', tag: s.version.to_s }
 
+  s.platform       = :ios, '9.0'
+
   s.source_files   = 'Pod/Classes/**/*.{h,m}'
   s.resources      = 'Pod/Assets/{GitDawg.js,assets}'
 
