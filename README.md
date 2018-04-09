@@ -7,7 +7,16 @@
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To run the example project, clone the repo, and run:
+
+* `npm install`
+
+In the project root directory.
+
+* `gem install cocoapods-fix-react-native`
+* `pod install` 
+
+In the Example directory.
 
 ## Requirements
 
